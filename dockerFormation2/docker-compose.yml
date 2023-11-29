@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+    
+    db2:
+        image: "mariadb:10.10"
+        environment:
+            MARIADB_ROOT_PASSWORD: root
+            MARIADB_DATABASE: docker-konnekt
+            MARIADB_USER: app
+            MARIADB_PASSWORD: password
+        networks: 
+          - shared_network
+            
+networks:
+  shared_network:
+    name: konnekt_default
+    external: true
